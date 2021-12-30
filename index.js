@@ -12,9 +12,10 @@ axios(busTimesUrl)
         const $ = cheerio.load(html)
         const busTimes = []
         // Temp scarping target (h2), update to bus times element when live.
-        // Cheerio
-        $('h1', html).each(function (){
-            const times = $(this).text()
+        // Cheerio -  // $('li[class=bus-data]').html().each(function ()
+        // $('li[class=orange]').html();
+        $('li[class=bus-data]').html().each(function () {
+            const times = $(this).text('data-service-number')
             console.log(times)
             // Append data to array
             busTimes.push(times)           
