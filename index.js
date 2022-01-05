@@ -14,8 +14,9 @@ axios(busTimesUrl)
         // Temp scarping target (h2), update to bus times element when live.
         // Cheerio -  // $('li[class=bus-data]').html().each(function ()
         // $('li[class=orange]').html();
-        $('li[class=bus-data]').html().each(function () {
-            const times = $(this).text('data-service-number')
+        // $('.fc-item__title', html).each(function ()
+        $('li', html).each(function () {
+            const times = $(this).attr('data-service-number');
             console.log(times)
             // Append data to array
             busTimes.push(times)           
